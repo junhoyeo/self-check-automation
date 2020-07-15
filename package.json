@@ -1,0 +1,20 @@
+{
+  "name": "self-check-automation",
+  "description": "Internal API based light & fast self-check automation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/junhoyeo/self-check-automation",
+  "author": "JunhoYeo <hanaro0704@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "form-data": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.23",
+    "typescript": "^3.9.6"
+  }
+}
