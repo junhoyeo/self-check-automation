@@ -18,18 +18,6 @@ const check = async ({
     rspns09: '0',
   });
 
-  console.log({
-    qstnCrtfcNoEncpt,
-    schulNm,
-    stdntName,
-    rtnRsltCode: 'SUCCESS',
-    rspns01: '1',
-    rspns02: '1',
-    rspns07: '0',
-    rspns08: '0',
-    rspns09: '0',
-  })
-
   return res;
 };
 
