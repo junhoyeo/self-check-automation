@@ -4,7 +4,7 @@ export interface IEssentialInfo {
 }
 
 export interface ICredentials extends IEssentialInfo {
-  schoolCode: string;
+  schoolCode?: string;
   studentBirth: string;
 }
 

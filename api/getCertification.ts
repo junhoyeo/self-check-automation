@@ -6,7 +6,7 @@ const getCertification = async ({
   schoolName: schulNm,
   studentName: pName,
   studentBirth: frnoRidno,
-}: ICredentials): Promise<string> => {
+}: Required<ICredentials>): Promise<string> => {
   const {
     data,
   } = await api('/stv_cvd_co00_012.do', {
