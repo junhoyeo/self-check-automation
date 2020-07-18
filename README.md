@@ -43,7 +43,7 @@ cd self-check-automation
 | `schoolCode` | 학교 코드 | `string` | ❌ |
 | `schoolName` | 학교 이름 | `string` | 필수 |
 | `studentName` | 사용자 이름 | `string` | 필수 |
-| `studentBirth` | 사용자 생년월일(`yyMMdd`로 8자리 숫자) | `string` | 필수 |
+| `studentBirth` | 사용자 생년월일(`yyMMdd`로 6자리 숫자) | `string` | 필수 |
 
 #### 잠깐, 학교 코드를 모르셔도 괜찮아요!
 **학교 코드**란 교육행정정보시스템(나이스)에서 각 학교를 구분하기 위해 내부적으로 사용하는 값입니다.<br />
