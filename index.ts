@@ -2,25 +2,12 @@ import {
   ICredentials,
   getCertification,
   getCheckResponse,
-  getSchoolCode,
 } from './api';
 
-import { successText, drawSuccessBox } from './constants';
+import { successText, drawSuccessBox } from './utils/constants';
+import fillCredentials from './utils/fillCredentials';
 
 import storedCredentials from './credentials.json';
-
-const fillCredentials = async (storedCredentials: ICredentials): Promise<Required<ICredentials> | null> => {
-  const { schoolName } = storedCredentials;
-  const firstSchoolCode = await getSchoolCode(schoolName);
-  if (firstSchoolCode) {
-    console.log(`📝 ${schoolName}의 학교코드는 ${firstSchoolCode} 입니다.`);
-    return {
-      ...storedCredentials,
-      schoolCode: firstSchoolCode,
-    }
-  }
-  return null;
-};
 
 (async () => {
   const {
@@ -31,7 +18,11 @@ const fillCredentials = async (storedCredentials: ICredentials): Promise<Require
     if (schoolCode) {
       return storedCredentials;
     }
-    return await fillCredentials(storedCredentials);
+    const filledCredentials = await fillCredentials(storedCredentials);
+    if (!filledCredentials) {
+      throw new Error('❌ 학교를 찾을 수 없습니다.');
+    }
+    return filledCredentials;
   })() as Required<ICredentials>;
 
   const certification = await getCertification(credentials);
