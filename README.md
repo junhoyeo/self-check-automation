@@ -36,12 +36,20 @@ cd self-check-automation
 
 [credentials.json](./credentials.json)에 개인정보를 입력합니다.
 
-| 필드명 | 설명 | 타입 |
-| ---- | --- | --- |
-| `schoolCode` | 학교 코드 | `string` |
-| `schoolName` | 학교 이름 | `string` |
-| `studentName` | 사용자 이름 | `string` |
-| `studentBirth` | 사용자 생년월일(`yyMMdd`로 8자리 숫자) | `string` |
+| 필드명 | 설명 | 타입 | 필수 여부 |
+| ---- | --- | --- | ------- |
+| `schoolCode` | 학교 코드 | `string` | ❌ |
+| `schoolName` | 학교 이름 | `string` | 필수 |
+| `studentName` | 사용자 이름 | `string` | 필수 |
+| `studentBirth` | 사용자 생년월일(`yyMMdd`로 8자리 숫자) | `string` | 필수 |
+
+#### 잠깐, 학교 코드를 모르셔도 괜찮아요!
+**학교 코드**란 교육행정정보시스템(나이스)에서 각 학교를 구분하기 위해 내부적으로 사용하는 값입니다.<br />
+그렇기 때문에 사용자 입장에서는 존재조차 모르는 경우가 많고, 실제로도 굳이 알고 있을 필요가 없습니다.
+
+<img alt="result" src="./docs/images/get-school-code.png" width="672">
+
+> 학교 이름만 정확히 입력하셨다면, 자동으로 학교 코드를 찾아 체크에 사용합니다.
 
 ### 3. Build & Run
 
