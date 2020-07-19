@@ -6,7 +6,7 @@ const check = async ({
   schoolName: schulNm,
   studentName: stdntName,
 }: ICredentialsWithCertification) => {
-  const res = await api('/stv_cvd_co02_000.do', {
+  const sendRequest = async (endpoint: string) => await api(endpoint, {
     qstnCrtfcNoEncpt,
     schulNm,
     stdntName,
@@ -17,6 +17,9 @@ const check = async ({
     rspns08: '0',
     rspns09: '0',
   });
+
+  await sendRequest('/stv_cvd_co01_000.do');
+  const res = await sendRequest('/stv_cvd_co02_000.do');
 
   return res;
 };
