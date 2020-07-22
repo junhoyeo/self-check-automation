@@ -26,8 +26,9 @@ import storedCredentials from './credentials.json';
   })() as Required<ICredentials>;
 
   const certification = await getCertification(credentials);
-  const { data } = await getCheckResponse({ certification, ...credentials });
-  if(data.resultSVO.rtnRsltCode == successText) {
+
+  const { data: { resultSVO: { rtnRsltCode: resultCode } } } = await getCheckResponse({ certification, ...credentials });
+  if (resultCode == successText) {
     drawSuccessBox();
   }
 })();
