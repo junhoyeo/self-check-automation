@@ -7,9 +7,10 @@ interface IDataObject {
 
 export const convertToFormData = (data: IDataObject) => {
   const formData = new FormData();
-  for (const [key, value] of Object.entries(data)) {
-    formData.append(key, value);
-  }
+  Object
+    .entries(data)
+    .forEach(([key, value]) =>
+      formData.append(key, value));
   return formData;
 };
 

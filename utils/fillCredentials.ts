@@ -3,9 +3,9 @@ import {
   getSchoolCode,
 } from '../api';
 
-type filledCredentials = Required<ICredentials> | null;
+type TFilledCredentials = Required<ICredentials> | null;
 
-const fillCredentials = async (storedCredentials: ICredentials): Promise<filledCredentials> => {
+const fillCredentials = async (storedCredentials: ICredentials): Promise<TFilledCredentials> => {
   const { schoolName } = storedCredentials;
   const firstSchoolCode = await getSchoolCode(schoolName);
   if (firstSchoolCode) {
@@ -13,7 +13,7 @@ const fillCredentials = async (storedCredentials: ICredentials): Promise<filledC
     return {
       ...storedCredentials,
       schoolCode: firstSchoolCode,
-    }
+    };
   }
   return null;
 };
