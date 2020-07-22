@@ -18,8 +18,7 @@ const check = async ({
     rspns09: '0',
   });
 
-  sendRequest('/stv_cvd_co01_000.do');
-  const res = await sendRequest('/stv_cvd_co02_000.do');
+  const res = await sendRequest('/stv_cvd_co01_000.do');
 
   return res;
 };
