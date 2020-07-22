@@ -1,5 +1,5 @@
 import api from './utils/api';
-import { ICredentialsWithCertification } from './utils/interfaces';
+import { ICredentialsWithCertification, IHTMLResponse } from './utils/interfaces';
 
 const check = async ({
   certification: qstnCrtfcNoEncpt,
@@ -21,7 +21,7 @@ const check = async ({
   sendRequest('/stv_cvd_co01_000.do');
   const res = await sendRequest('/stv_cvd_co02_000.do');
 
-  return res;
+  return res as IHTMLResponse;
 };
 
 export default check;

@@ -1,5 +1,5 @@
 import api from './utils/api';
-import { ICredentials } from './utils/interfaces';
+import { ICredentials, ICertificationResponse } from './utils/interfaces';
 
 const getCertification = async ({
   schoolCode: schulCode,
@@ -14,7 +14,7 @@ const getCertification = async ({
     schulNm,
     pName,
     frnoRidno,
-  });
+  }) as ICertificationResponse;
 
   const {
     resultSVO: {

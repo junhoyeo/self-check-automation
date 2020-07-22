@@ -9,7 +9,7 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist | gnomon",
-    "lint": "eslint . --ext .ts"
+    "lint": "eslint . --ext .ts --fix"
   },
   "dependencies": {
     "axios": "^0.19.2",
