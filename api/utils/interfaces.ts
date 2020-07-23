@@ -20,6 +20,14 @@ export interface ICertificationResponse {
   }
 }
 
+export interface ICheckStatusResponse {
+  data: {
+    resultSVO: {
+      rtnRsltCode: string;
+    }
+  }
+}
+
 export interface IHTMLResponse {
   data: string;
 }
