@@ -40,8 +40,6 @@ const fillCredentials = async (storedCredentials: ICredentials): Promise<TFilled
           if(err) {
             throw new Error("❌ 학교코드를 반영할 수 없습니다.")
           }
-
-          console.log("succes");
         })
       }
 

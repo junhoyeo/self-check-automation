@@ -35,7 +35,6 @@ import storedCredentials from './credentials.json';
     return ""
   })
 
-  console.log(`처리 URL ${certificationURL}`);
   const {
     data: {
       resultSVO: {
