@@ -6,16 +6,16 @@ const getCertification = async ({
   schoolName: schulNm,
   studentName: pName,
   studentBirth: frnoRidno,
+  schoolRegion: baseUrl
 }: Required<ICredentials>): Promise<string> => {
   const {
     data,
-  } = await api('/stv_cvd_co00_012.do', {
+  } = await api(baseUrl, '/stv_cvd_co00_012.do', {
     schulCode,
     schulNm,
     pName,
     frnoRidno,
   }) as ICertificationResponse;
-
   const {
     resultSVO: {
       qstnCrtfcNoEncpt,

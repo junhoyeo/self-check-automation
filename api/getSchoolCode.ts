@@ -1,10 +1,10 @@
 import api from './utils/api';
 import { IHTMLResponse } from './utils/interfaces';
 
-const getSchoolCode = async (schulNm: string): Promise<string> => {
+const getSchoolCode = async (baseUrl: string, schulNm: string): Promise<string> => {
   const {
     data: html,
-  } = await api('/stv_cvd_co00_003.do', {
+  } = await api(baseUrl, '/stv_cvd_co00_003.do', {
     schulNm,
   }) as IHTMLResponse;
 

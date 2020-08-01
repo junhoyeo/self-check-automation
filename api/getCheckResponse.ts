@@ -4,12 +4,12 @@ import {
   ICheckStatusResponse,
 } from './utils/interfaces';
 
-const check = async ({
+const check = async (baseUrl: string, {
   certification: qstnCrtfcNoEncpt,
   schoolName: schulNm,
   studentName: stdntName,
 }: ICredentialsWithCertification) => {
-  const sendRequest = async (endpoint: string) => await api(endpoint, {
+  const sendRequest = async (endpoint: string) => await api(baseUrl, endpoint, {
     qstnCrtfcNoEncpt,
     schulNm,
     stdntName,
