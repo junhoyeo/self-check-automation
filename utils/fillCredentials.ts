@@ -7,7 +7,11 @@ import {
 type TFilledCredentials = Required<ICredentials> | null;
 
 import getAreaURL from "../api/utils/getAreaURL"
+import fs, { readFile, read, readdir } from "fs"
+import { errorMonitor } from 'form-data';
 
+import storedCredentials from "../credentials.json"
+import { successText } from './constants';
 /*
    Edited at 2020-08-01
    Copyright BelBone, All rights reserved.
@@ -21,12 +25,28 @@ const fillCredentials = async (storedCredentials: ICredentials): Promise<TFilled
   });
   const firstSchoolCode = await getSchoolCode(SchoolURL, schoolName);
   if (firstSchoolCode) {
-    //console.log(`📝 ${schoolName}의 학교코드는 ${firstSchoolCode} 입니다.`);
-    return {
+    console.log(`📝 ${schoolName}의 학교코드는 ${firstSchoolCode} 입니다.`);
+
+    const returnData: TFilledCredentials = {
       ...storedCredentials,
       schoolCode: firstSchoolCode,
       schoolRegion: SchoolURL
     };
+
+    var readedData: ICredentials = storedCredentials;
+      if(readedData !== null) {
+        readedData.schoolCode = firstSchoolCode;
+        fs.writeFile("./credentials.json", JSON.stringify(readedData, null, 3), (err) => {
+          if(err) {
+            throw new Error("❌ 학교코드를 반영할 수 없습니다.")
+          }
+
+          console.log("succes");
+        })
+      }
+
+    
+    return returnData;
   }
   return null;
 };

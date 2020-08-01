@@ -20,6 +20,7 @@ export default (baseUrl: string, url: string, data: IDataObject) => {
   const api = axios.create({
     baseURL: baseUrl,
   });
+
   return api({
     url,
     method: 'POST',

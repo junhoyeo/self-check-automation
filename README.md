@@ -43,9 +43,9 @@ cd self-check-automation
 | 필드명 | 설명 | 타입 | 필수 여부 |
 | ---- | --- | --- | ------- |
 | `schoolCode` | 학교 코드 | `string` | ❌ |
-| `schoolName` | 학교 이름 | `string` | 필수 |
-| `studentName` | 사용자 이름 | `string` | 필수 |
-| `studentBirth` | 사용자 생년월일(`yyMMdd`로 6자리 숫자) | `string` | 필수 |
+| `schoolName` | 학교 이름 | `string` | :white_check_mark: |
+| `studentName` | 사용자 이름 | `string` | :white_check_mark: |
+| `studentBirth` | 사용자 생년월일(`yyMMdd`로 6자리 숫자) | `string` | :white_check_mark: |
 
 #### 잠깐, 학교 코드를 모르셔도 괜찮아요!
 **학교 코드**란 교육행정정보시스템(나이스)에서 각 학교를 구분하기 위해 내부적으로 사용하는 값입니다.<br />
@@ -54,7 +54,7 @@ cd self-check-automation
 <img alt="result" src="./docs/images/get-school-code.png" width="672">
 
 > 학교 이름만 정확히 입력하셨다면, 자동으로 학교 코드를 찾아 체크에 사용합니다.
-
+> 한번 입력하면, credentials.json에 학교 코드가 자동으로 대입됩니다.
 ### 3. Build & Run
 
 ```bash
@@ -72,5 +72,5 @@ yarn start
 ### Todo
 
 - [ ] 학교 코드 검색 시, 정확한 학교명이 아닌 검색어를 사용했을 경우를 생각해 코드와 함께 제공되는 학교 이름을 가져오도록 하기
-- [ ] 검색한 학교 코드를 다음 실행 시에 바로 사용할 수 있도록 `credentials.json`에 저장하기
-- [ ] 경기도 외 다른 교육청도 지원
+- [x] 검색한 학교 코드를 다음 실행 시에 바로 사용할 수 있도록 `credentials.json`에 저장하기
+- [x] 경기도 외 다른 교육청도 지원

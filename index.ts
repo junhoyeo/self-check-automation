@@ -7,7 +7,7 @@ import {
 import { successText, drawSuccessBox, drawFailedBox } from './utils/constants';
 import fillCredentials from './utils/fillCredentials';
 import getAreaURL from "./api/utils/getAreaURL"
-import storedCredentials from './credentials.example.json';
+import storedCredentials from './credentials.json';
 
 (async () => {
   const {
