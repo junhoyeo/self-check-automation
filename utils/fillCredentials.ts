@@ -17,17 +17,17 @@ import { successText } from './constants';
 const fillCredentials = async (storedCredentials: ICredentials): Promise<TFilledCredentials> => {
   const { schoolName } = storedCredentials;
 
-  const SchoolURL = await getAreaURL({
+  const schoolURL = await getAreaURL({
     schoolRegion: storedCredentials.schoolRegion
   });
-  const firstSchoolCode = await getSchoolCode(SchoolURL, schoolName);
+  const firstSchoolCode = await getSchoolCode(schoolURL, schoolName);
   if (firstSchoolCode) {
     console.log(`📝 ${schoolName}의 학교코드는 ${firstSchoolCode} 입니다.`);
 
     const returnData: TFilledCredentials = {
       ...storedCredentials,
       schoolCode: firstSchoolCode,
-      schoolRegion: SchoolURL
+      schoolRegion: schoolURL
     };
 
     var readedData: ICredentials = storedCredentials;
