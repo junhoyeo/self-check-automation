@@ -6,11 +6,11 @@ const getCertification = async ({
   schoolName: schulNm,
   studentName: pName,
   studentBirth: frnoRidno,
-  schoolRegion: baseUrl
+  schoolRegion: baseURL
 }: Required<ICredentials>): Promise<string> => {
   const {
     data,
-  } = await api(baseUrl, '/stv_cvd_co00_012.do', {
+  } = await api(baseURL, '/stv_cvd_co00_012.do', {
     schulCode,
     schulNm,
     pName,
