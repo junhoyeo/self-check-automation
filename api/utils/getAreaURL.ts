@@ -30,11 +30,11 @@ const AreaURL : AreaData = {
 };
 
 
-const getAreaURL = async (regionString: SchoolURLInfo) => {
-    if(!AreaURL[regionString.schoolRegion]) {
+const getAreaURL = async (regionInfo: SchoolURLInfo) => {
+    if(!AreaURL[regionInfo.schoolRegion]) {
         throw new Error(`😰 학교의 지역정보가 올바르지 않아요. (${Object.keys(AreaURL).join(", ")} 중 선택)`);
     }
-    return AreaURL[regionString.schoolRegion];
+    return AreaURL[regionInfo.schoolRegion];
 }
 
 export default getAreaURL;
