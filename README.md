@@ -40,12 +40,14 @@ cd self-check-automation
 
 [credentials.json](./credentials.json)에 개인정보를 입력합니다.
 
-| 필드명 | 설명 | 타입 | 필수 여부 |
+| 필드명 | 설명 | 타입 | 필수 :white_check_mark:/❌ |
 | ---- | --- | --- | ------- |
 | `schoolCode` | 학교 코드 | `string` | ❌ |
 | `schoolName` | 학교 이름 | `string` | :white_check_mark: |
 | `studentName` | 사용자 이름 | `string` | :white_check_mark: |
 | `studentBirth` | 사용자 생년월일(`yyMMdd`로 6자리 숫자) | `string` | :white_check_mark: |
+| `schoolRegion` | 사용자가 근무하는 학교의 시/도(광역시, 시, 도, 특별자치시 구분) | `string` | :white_check_mark: |
+
 
 #### 잠깐, 학교 코드를 모르셔도 괜찮아요!
 **학교 코드**란 교육행정정보시스템(나이스)에서 각 학교를 구분하기 위해 내부적으로 사용하는 값입니다.<br />
