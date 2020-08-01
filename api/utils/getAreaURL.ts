@@ -1,10 +1,5 @@
 import { SchoolURLInfo } from "./interfaces";
 
-/*
-   Created at 2020-07-31
-   Copyright BelBone, all rights reserved.
-*/
-
 export interface AreaData {
     [key: string]: string;
 }
