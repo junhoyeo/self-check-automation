@@ -12,10 +12,7 @@ import { errorMonitor } from 'form-data';
 
 import storedCredentials from "../credentials.json"
 import { successText } from './constants';
-/*
-   Edited at 2020-08-01
-   Copyright BelBone, All rights reserved.
-*/
+
 
 const fillCredentials = async (storedCredentials: ICredentials): Promise<TFilledCredentials> => {
   const { schoolName } = storedCredentials;
