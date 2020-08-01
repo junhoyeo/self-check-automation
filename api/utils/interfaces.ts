@@ -10,6 +10,12 @@ export interface ICredentials extends IEssentialInfo {
   schoolRegion: string,
 }
 
+export interface ICredentialsForFill extends IEssentialInfo {
+  schoolCode?: string;
+  studentBirth: string;
+  schoolURL: string,
+}
+
 export interface ICredentialsWithCertification extends IEssentialInfo {
   certification: string;
 }

@@ -30,10 +30,7 @@ import storedCredentials from './credentials.json';
   const certification = await getCertification({
     ...credentials,
     schoolRegion: certificationURL
-  }).then(r => r).catch(e => {
-    console.error(e)
-    return ""
-  })
+  });
 
   const {
     data: {

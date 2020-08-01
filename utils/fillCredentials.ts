@@ -3,8 +3,8 @@ import {
   getSchoolCode,
 } from '../api';
 
-
-type TFilledCredentials = Required<ICredentials> | null;
+import {ICredentialsForFill} from "../api/utils/interfaces"
+type TFilledCredentials = Required<ICredentialsForFill> | null;
 
 import getAreaURL from "../api/utils/getAreaURL"
 import fs, { readFile, read, readdir } from "fs"
@@ -27,10 +27,9 @@ const fillCredentials = async (storedCredentials: ICredentials): Promise<TFilled
     const returnData: TFilledCredentials = {
       ...storedCredentials,
       schoolCode: firstSchoolCode,
-      schoolRegion: schoolURL
+      schoolURL,
     };
-
-    var readedData: ICredentials = storedCredentials;
+    const readedData: ICredentials = storedCredentials;
       if(readedData !== null) {
         readedData.schoolCode = firstSchoolCode;
         fs.writeFile("./credentials.json", JSON.stringify(readedData, null, 3), (err) => {

@@ -1,10 +1,10 @@
 
 
 export const successText = 'SUCCESS';
-
+const timestamp = new Date().toLocaleString();
+const spacesAfterTimestamp = ' '.repeat(32 - timestamp.length);
 export const drawSuccessBox = () => {
-  const timestamp = new Date().toLocaleString();
-  const spacesAfterTimestamp = ' '.repeat(32 - timestamp.length);
+  
   console.log(`
 ┌──────────────────────────────────────┐
 │                                      │
@@ -18,11 +18,8 @@ export const drawSuccessBox = () => {
 
 
 export const drawFailedBox = (code: string) => {
-  const timestamp = new Date().toLocaleString();
-  const spacesAfterTimestamp = ' '.repeat(32 - timestamp.length);
-
   const getReason = ((statusCode: string) => {
-    // Todo 
+    // TODO  
     return "참여주소 또는 본인확인 정보를 확인해주세요!";
   })(code);
   console.log(`
@@ -33,6 +30,8 @@ export const drawFailedBox = (code: string) => {
 └──────────────────────────────────────┘
 
 
-🔑 문제 해결을 위해 ${getReason}
-  `);
+🔑 문제 해결을 위해 ${getReason}`);
 }
+
+
+
