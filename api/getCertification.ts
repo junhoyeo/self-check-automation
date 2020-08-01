@@ -1,21 +1,21 @@
 import api from './utils/api';
-import { ICredentials, ICertificationResponse } from './utils/interfaces';
+import { ICredentialsWithBaseURL, ICertificationResponse } from './utils/interfaces';
 
 const getCertification = async ({
   schoolCode: schulCode,
   schoolName: schulNm,
   studentName: pName,
   studentBirth: frnoRidno,
-}: Required<ICredentials>): Promise<string> => {
+  baseURL,
+}: Required<ICredentialsWithBaseURL>): Promise<string> => {
   const {
     data,
-  } = await api('/stv_cvd_co00_012.do', {
+  } = await api(baseURL, '/stv_cvd_co00_012.do', {
     schulCode,
     schulNm,
     pName,
     frnoRidno,
   }) as ICertificationResponse;
-
   const {
     resultSVO: {
       qstnCrtfcNoEncpt,

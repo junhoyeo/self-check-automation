@@ -14,12 +14,11 @@ export const convertToFormData = (data: IDataObject) => {
   return formData;
 };
 
-const api = axios.create({
-  baseURL: 'https://eduro.goe.go.kr/',
-});
-
-export default (url: string, data: IDataObject) => {
+export default (baseURL: string, url: string, data: IDataObject) => {
   const formData = convertToFormData(data);
+  const api = axios.create({
+    baseURL,
+  });
 
   return api({
     url,

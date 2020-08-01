@@ -1,10 +1,11 @@
 import {
   ICredentials,
+  getAreaURL,
   getCertification,
   getCheckResponse,
 } from './api';
 
-import { successText, drawSuccessBox } from './utils/constants';
+import { successText, drawSuccessBox, drawFailedBox } from './utils/constants';
 import fillCredentials from './utils/fillCredentials';
 
 import storedCredentials from './credentials.json';
@@ -12,6 +13,7 @@ import storedCredentials from './credentials.json';
 (async () => {
   const {
     schoolCode = '',
+    schoolRegion,
   } = storedCredentials as ICredentials;
 
   const credentials = await (async () => {
@@ -22,10 +24,15 @@ import storedCredentials from './credentials.json';
     if (!filledCredentials) {
       throw new Error('❌ 학교를 찾을 수 없습니다.');
     }
+
     return filledCredentials;
   })() as Required<ICredentials>;
 
-  const certification = await getCertification(credentials);
+  const baseURL = getAreaURL(schoolRegion);
+  const certification = await getCertification({
+    ...credentials,
+    baseURL,
+  });
 
   const {
     data: {
@@ -33,8 +40,13 @@ import storedCredentials from './credentials.json';
         rtnRsltCode: resultCode,
       },
     },
-  } = await getCheckResponse({ certification, ...credentials });
-  if (resultCode == successText) {
+  } = await getCheckResponse(baseURL, {
+    ...credentials,
+    certification,
+  });
+  if (resultCode === successText) {
     drawSuccessBox();
+  } else {
+    drawFailedBox(resultCode);
   }
 })();

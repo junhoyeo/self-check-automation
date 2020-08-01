@@ -1,9 +1,19 @@
 export interface IEssentialInfo {
   schoolName: string;
-  studentName: string;
+  studentName: string,
 }
 
 export interface ICredentials extends IEssentialInfo {
+  schoolCode?: string;
+  schoolRegion: string,
+  studentBirth: string;
+}
+
+export interface ICredentialsWithBaseURL extends ICredentials {
+  baseURL: string;
+}
+
+export interface ICredentialsForFill extends IEssentialInfo {
   schoolCode?: string;
   studentBirth: string;
 }
