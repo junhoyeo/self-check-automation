@@ -21,7 +21,7 @@ export const drawFailedBox = (code: string) => {
   const timestamp = new Date().toLocaleString();
   const spacesAfterTimestamp = ' '.repeat(32 - timestamp.length);
 
-  const getReason = ((statusCode: string = code) => {
+  const getReason = ((statusCode: string) => {
     // Todo 
     return "참여주소 또는 본인확인 정보를 확인해주세요!";
   })(code);
