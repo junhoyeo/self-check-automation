@@ -54,6 +54,7 @@ cd self-check-automation
 <img alt="result" src="./docs/images/get-school-code.png" width="672">
 
 > 학교 이름만 정확히 입력하셨다면, 자동으로 학교 코드를 찾아 체크에 사용합니다.
+
 > 한번 입력하면, credentials.json에 학교 코드가 자동으로 대입됩니다.
 ### 3. Build & Run
 
