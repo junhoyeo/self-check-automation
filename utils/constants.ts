@@ -16,10 +16,6 @@ export const drawSuccessBox = () => {
 };
 
 
-/*
-   Created at 2020-08-01.
-   Copyright BelBone all rights reserved.
-*/
 
 export const drawFailedBox = (code: string) => {
   const timestamp = new Date().toLocaleString();
