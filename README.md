@@ -45,7 +45,7 @@ cd self-check-automation
 | ---- | --- | --- | ------- |
 | `schoolCode` | 학교 코드 | `string` | ❌ |
 | `schoolName` | 학교 이름 | `string` | **필수** |
-| `schoolRegion` | 사용자가 근무하는 학교의 지역 이름(시/도 등의 구분) | `string` | **필수** |
+| `schoolRegion` | 학교의 지역 이름(시/도 등의 구분) | `string` | **필수** |
 | `studentName` | 사용자 이름 | `string` | **필수** |
 | `studentBirth` | 사용자 생년월일(`yyMMdd`로 6자리 숫자) | `string` | **필수** |
 
