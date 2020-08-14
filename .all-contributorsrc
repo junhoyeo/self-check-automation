@@ -1,0 +1,46 @@
+{
+  "projectName": "self-check-automation",
+  "projectOwner": "Junho Yeo",
+  "repoType": "github",
+  "repoHost": "",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "commitConvention": "angular",
+  "contributors": [
+    {
+      "login": "junhoyeo",
+      "name": "Junho Yeo",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/32605822?v=4",
+      "profile": "https://trendy-resume.now.sh/",
+      "contributions": [
+        "code",
+        "doc",
+        "maintenance"
+      ]
+    },
+    {
+      "login": "MinSeungHyun",
+      "name": "SeungHyun",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/44062683?v=4",
+      "profile": "https://github.com/MinSeungHyun",
+      "contributions": [
+        "code",
+        "doc",
+        "maintenance"
+      ]
+    },
+    {
+      "login": "BelBone",
+      "name": "BelBone",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/63758483?v=4",
+      "profile": "https://github.com/BelBone",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}
