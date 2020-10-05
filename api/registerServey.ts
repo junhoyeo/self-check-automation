@@ -8,15 +8,16 @@ interface IRegisterServeyProps {
 }
 
 const registerServey = async ({ studentName, token }: IRegisterServeyProps) => {
-  const { data: registerData } = await api.post('/registerServey', {
+  const { data: registerData }: TRegisterServeyResponse = await api.post('/registerServey', {
     ...serveyData,
     upperToken: token,
     upperUserNameEncpt: studentName,
   }, {
     headers: {
+      // eslint-disable-next-line @typescript-eslint/naming-convention
       Authorization: token,
-    }
-  }) as TRegisterServeyResponse;
+    },
+  });
 
   return registerData;
 };

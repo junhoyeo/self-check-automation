@@ -7,7 +7,8 @@ import storedCredentials from './credentials.json';
     const { studentName } = storedCredentials;
     const registerData = await registerServey({ studentName, token });
     console.log(registerData);
-  } catch (err) {
-    console.log(err.response.data);
+  } catch (error) {
+    console.log(error?.message);
+    console.log(error?.response.data);
   }
 })();

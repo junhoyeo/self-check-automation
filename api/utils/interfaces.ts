@@ -9,8 +9,8 @@ export interface ICredentials extends IEssentialInfo {
   studentBirth: string;
 }
 
-interface IAPIResponse<Response> {
-  data: Response
+interface IAPIResponse<TResponse> {
+  data: TResponse;
 }
 
 export type TFindUserReponse = IAPIResponse<{
@@ -23,9 +23,9 @@ export type TFindUserReponse = IAPIResponse<{
   stdntYn: string;
   token: string;
   mngrDeptYn: string;
-}>
+}>;
 
 export type TRegisterServeyResponse = IAPIResponse<{
   registerDtm: string;
   inveYmd: string;
-}>
+}>;
