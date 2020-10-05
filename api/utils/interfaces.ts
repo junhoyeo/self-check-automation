@@ -9,35 +9,23 @@ export interface ICredentials extends IEssentialInfo {
   studentBirth: string;
 }
 
-export interface ICredentialsWithBaseURL extends ICredentials {
-  baseURL: string;
+interface IAPIResponse<Response> {
+  data: Response
 }
 
-export interface ICredentialsForFill extends IEssentialInfo {
-  schoolCode?: string;
-  studentBirth: string;
-}
+export type TFindUserReponse = IAPIResponse<{
+  orgName: string;
+  admnYn: string;
+  atptOfcdcConctUrl: string;
+  mngrClassYn: string;
+  pInfAgrmYn: string;
+  userName: string;
+  stdntYn: string;
+  token: string;
+  mngrDeptYn: string;
+}>
 
-export interface ICredentialsWithCertification extends IEssentialInfo {
-  certification: string;
-}
-
-export interface ICertificationResponse {
-  data: {
-    resultSVO: {
-      qstnCrtfcNoEncpt: string;
-    }
-  }
-}
-
-export interface ICheckStatusResponse {
-  data: {
-    resultSVO: {
-      rtnRsltCode: string;
-    }
-  }
-}
-
-export interface IHTMLResponse {
-  data: string;
-}
+export type TRegisterServeyResponse = IAPIResponse<{
+  registerDtm: string;
+  inveYmd: string;
+}>
