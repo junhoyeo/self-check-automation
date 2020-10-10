@@ -12,75 +12,49 @@
     "@typescript-eslint/naming-convention": [
       "error",
       {
-        "format": [
-          "camelCase"
-        ],
+        "format": ["camelCase"],
         "selector": "default"
       },
       {
-        "format": [
-          "camelCase"
-        ],
+        "format": ["camelCase"],
         "selector": "variableLike"
       },
       {
-        "format": [
-          "camelCase",
-          "UPPER_CASE"
-        ],
+        "format": ["camelCase", "UPPER_CASE"],
         "selector": "variable"
       },
       {
-        "format": [
-          "camelCase"
-        ],
+        "format": ["camelCase"],
         "leadingUnderscore": "allow",
         "selector": "parameter"
       },
       {
-        "format": [
-          "camelCase"
-        ],
+        "format": ["camelCase"],
         "selector": "memberLike"
       },
       {
-        "format": [
-          "camelCase"
-        ],
+        "format": ["camelCase"],
         "leadingUnderscore": "require",
-        "modifiers": [
-          "private"
-        ],
+        "modifiers": ["private"],
         "selector": "memberLike"
       },
       {
-        "format": [
-          "PascalCase"
-        ],
-        "prefix": [
-          "T"
-        ],
+        "format": ["PascalCase"],
+        "prefix": ["T"],
         "selector": "typeLike"
       },
       {
-        "format": [
-          "PascalCase"
-        ],
-        "prefix": [
-          "T"
-        ],
+        "format": ["PascalCase"],
+        "prefix": ["T"],
         "selector": "typeParameter"
       },
       {
-        "format": [
-          "PascalCase"
-        ],
-        "prefix": [
-          "I"
-        ],
+        "format": ["PascalCase"],
+        "prefix": ["I"],
         "selector": "interface"
       }
     ],
+    "@typescript-eslint/no-unsafe-member-access": "off",
     "@typescript-eslint/no-floating-promises": "off",
     "implicit-arrow-linebreak": "off",
     "no-console": "off",
