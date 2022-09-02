@@ -12,7 +12,7 @@
     "lint": "eslint . --ext .ts --fix"
   },
   "dependencies": {
-    "axios": "^0.21.1",
+    "axios": "^0.21.2",
     "jsencrypt": "^3.0.0-rc.1"
   },
   "devDependencies": {
